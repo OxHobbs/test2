@@ -3,20 +3,4 @@
 # Recipe:: publish
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
-include_recipe "delivery-truck::provision"
-include_recipe 'delivery-truck::deploy'
-
-
-search_query = "recipes:#{node['delivery']['change']['project']}* AND " \
-"chef_environment:acceptance-delivery_ent-pilot-org-test2-master"
-nodes = delivery_chef_server_search(:node, search_query.to_s)
-
-nodes.each do |i_node|
-  delivery_inspec "inspec_#{node['delivery']['change']['project']}" do
-    infra_node i_node['ipaddress']
-    os i_node['os']
-    inspec_test_path '/test/smoke'
-  end
-end
-
 include_recipe 'delivery-truck::publish'
