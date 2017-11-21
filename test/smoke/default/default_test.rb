@@ -8,3 +8,7 @@
 describe file('c:/test.txt') do
   it { should exist }
 end
+
+describe file('c:/test3.txt') do
+  it { should exist }
+end
