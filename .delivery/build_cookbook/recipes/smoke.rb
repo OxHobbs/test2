@@ -13,6 +13,6 @@ nodes.each do |i_node|
   delivery_inspec "inspec_#{node['delivery']['change']['project']}" do
     infra_node i_node['ipaddress']
     os i_node['os']
-    inspec_test_path 'test/smoke'
+    inspec_test_path '/test/smoke'
   end
 end
