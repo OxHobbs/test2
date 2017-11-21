@@ -8,7 +8,7 @@ include_recipe 'delivery-truck::deploy'
 
 
 search_query = "recipes:#{node['delivery']['change']['project']}* AND " \
-"chef_environment:#{delivery_environment}"
+"chef_environment:acceptance-delivery_ent-pilot-org-test2-master"
 nodes = delivery_chef_server_search(:node, search_query.to_s)
 
 nodes.each do |i_node|
