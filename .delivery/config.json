@@ -12,7 +12,12 @@
       "chef_server": true
     }
   },
-  "skip_phases": [],
+  "skip_phases": [
+    "provision",
+    "deploy",
+    "smoke",
+    "functional"
+  ],
   "job_dispatch": {
     "version": "v2"
   },
