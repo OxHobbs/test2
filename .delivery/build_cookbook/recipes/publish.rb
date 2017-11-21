@@ -3,6 +3,10 @@
 # Recipe:: publish
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
+include_recipe "delivery-truck::provision"
+include_recipe 'delivery-truck::deploy'
+
+
 search_query = "recipes:#{node['delivery']['change']['project']}* AND " \
 "chef_environment:#{delivery_environment}"
 nodes = delivery_chef_server_search(:node, search_query.to_s)
